@@ -7,14 +7,14 @@ FLAGS=-ffreestanding -fbuiltin -Wall -Wextra
 LIBS=-nostdlib -lgcc
 
 all:
-	i686-elf-as ./src/asm/init.asm -o boot.o
-	i686-elf-gcc ./src/c/kmain.c -o kernel.o
+	i686-elf-as ./src/kernel/asm/init.asm -o boot.o
+	i686-elf-gcc ./src/kernel/c/kmain.c -o kernel.o
 	i686-elf-gcc -T linker.ld *.o $(LIBS) -o zanix.iso 
 
 clean:
-	rm *.o
-	rm *.bin
-	rm *.iso
+	rm ./*.o
+	rm ./*.bin
+	rm ./*.iso
 
 run:
 	qemu-system-i386 -cdrom zanix.iso
