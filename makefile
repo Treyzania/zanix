@@ -9,7 +9,7 @@ LIBS=-nostdlib -lgcc
 all:
 	i686-elf-as ./src/kernel/asm/init.asm -o boot.o
 	i686-elf-gcc ./src/kernel/c/kmain.c -o kernel.o
-	i686-elf-gcc -T linker.ld *.o $(LIBS) -o zanix.iso 
+	i686-elf-gcc -T ./src/kernel/linker.ld *.o $(LIBS) -o zanix.iso 
 
 clean:
 	rm ./*.o
