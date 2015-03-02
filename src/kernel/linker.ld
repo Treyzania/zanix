@@ -3,7 +3,7 @@ ENTRY(_start)
 
 SECTIONS
 {
-	. = 1M; // Begin sections here.
+	. = 1M; /* Begin sections at 1MiB. */
 	
 	.text BLOCK(4K) : ALIGN(4K)
 	{
