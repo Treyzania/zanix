@@ -1,0 +1,15 @@
+# Based on github.com/spektral/osdev
+
+# Text files and such
+*.lst
+*.log
+
+# Binaries
+*.bin
+*.iso
+*.o
+*.dat
+
+# Temp files
+*~
+tmp/
