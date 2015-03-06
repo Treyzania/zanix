@@ -30,7 +30,7 @@ uint8_t term_color; // BBBBFFFF, on most monitors and QEMU.
 uint16_t* terminal_buffer;
 
 uint8_t vga_color(enum vga_colors fg, enum vga_colors bg) {
-    return fg | bg << 8;
+    return fg | bg << 4;
 }
 
 uint16_t vga_entry(char c, uint8_t color) {
@@ -43,7 +43,7 @@ void term_init() {
     term_y = 0;
     
     term_color = 0x07; // Classic terminal style.
-    term_buffer = (*uint16_t) 0xB800;
+    term_buffer = (*uint16_t) 0xB8000;
 
     // Clean up any garbage.    
     for (size_t y = 0; y < VGA_HEIGHT; y++) {
