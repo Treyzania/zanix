@@ -50,8 +50,7 @@ void term_init() {
         
         for (size_t x = 0; x < VGA_WIDTH; x++) {
             
-            const size_t index = y * VGA_WIDTH + x;
-            terminal_buffer[index] = vga_entry(' ', term_color);
+            terminal_buffer[y * VGA_WIDTH + x] = vga_entry(' ', term_color);
             
         }
         
@@ -61,8 +60,7 @@ void term_init() {
 
 void term_setc(char c, uint8_t color, size_t x, size_t y) {
     
-    const size_t index;
-    terminal_buffer[index] = vga_entry(c, color)
+    terminal_buffer[y * VGA_WIDTH + x;] = vga_entry(c, color)
     
 }
 
