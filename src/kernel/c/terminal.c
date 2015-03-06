@@ -27,7 +27,7 @@ static const size_t VGA_HEIGHT = 25;
 size_t term_x;
 size_t term_y;
 uint8_t term_color; // BBBBFFFF, on most monitors and QEMU.
-uint16_t terminal_buffer;
+uint16_t* terminal_buffer;
 
 uint8_t vga_color(enum vga_colors fg, enum vga_colors bg) {
     return fg | bg << 8;
